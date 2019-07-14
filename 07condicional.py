@@ -23,3 +23,5 @@ if salario_administrativo<salario_jefe_area<salario_director<salario_presidente:
 	print("Todo funciona correctamente")
 else:
 	print("Algo falla en esta empresa")
+
+
