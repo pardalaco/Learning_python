@@ -7,7 +7,7 @@ else:
 
 
 salario_presidente=int(input("Introduce el salario del presidente: "))
-print("Este es el salario del presidente" + str(salario_presidente))#La funcion str lo que hace es convertir el int en texto asi para poder poner la cariable en el print
+print("Este es el salario del presidente" + str(salario_presidente))#La funcion str lo que hace es convertir el int en texto asi para poder poner la variable en el print
 
 salario_director=int(input("Introduce el salario del director: "))
 print("Este es el salario del director" + str(salario_director))
