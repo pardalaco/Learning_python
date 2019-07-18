@@ -18,15 +18,19 @@ for i in nombre:
 
 print(contador)"""
 
+#arroba=True
 email=input("Introduce tu email: ")
 
 for i in email:
 
 	if i=="@":
 
+#for i in range(len(email)):
+#	if email[i] == "@":
+
 		arroba=True
 
-		break;
+	break;
 
 else:
 	arroba=False
