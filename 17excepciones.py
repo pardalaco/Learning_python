@@ -16,13 +16,21 @@ def divide(num1,num2):
 	
 	except ZeroDivisionError:#Si el codigo no ha funcionado en el try entonces se ejecutara el ecept (para poner un except tenemos que poner el ecept y el error)
 		print("No se puede dividir entre 0")#Despued del escept ponemos lo que el codigo que queremos que se eccecute en este caso un print
-		return "Operacio+n erronia"
+		return "Operacion erronia"
 
-op1=(int(input("Introduce el primer número: ")))
+while True:
+	try:
+		op1=(int(input("Introduce el primer numero: ")))
 
-op2=(int(input("Introduce el segundo número: ")))		
-	
-operacion=input("Introduce la operación a realizar (suma,resta,multiplica,divide): ")
+		op2=(int(input("Introduce el segundo numero: ")))		
+		
+		break
+
+	except ValueError:
+		print("Los valores introducidos no son correctos. Intentalo de nuevo")
+
+
+operacion=input("Introduce la operacion a realizar (suma,resta,multiplica,divide): ")
 
 if operacion=="suma":
 	print(suma(op1,op2))
@@ -37,7 +45,7 @@ elif operacion=="divide":
 	print(divide(op1,op2))
 
 else:
-	print ("Operación no contemplada")
+	print ("Operacion no contemplada")
 
 
-print("Operación ejecutada. Continuación de ejecúción del programa ")
+print("Operacion ejecutada. Continuacion de ejecucion del programa ")
