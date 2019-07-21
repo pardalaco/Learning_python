@@ -8,12 +8,16 @@ def divide():
 
 		print("La division es: " + str(op1/op2))
 
+	#Si ponemos un except: captura una esseccion general
+
 	except ValueError:
 		print("El valor introducido es erroneo")
 
 	except ZeroDivisionError:
 		print("No se puede entre por 0")
 
-	print("Calculo finalizado")
+	finally:#Con esto lo que hacemos es que siempre se ejecute esa linea de codigo
+
+		print("Calculo finalizado")
 
 divide()

@@ -1,7 +1,7 @@
 print("Asignaturas obtativas ano 2019")
 print("Asignaturas obtativas: Informatica grafica - Pruebas de sofware - Usabilidad y accesibilidad")
 
-opcion=str(input("Escribe la asignatura escogida: "))
+opcion=input("Escribe la asignatura escogida: ")
 
 asignatura=opcion.lower()#Passa todas las letras a minuscula, para poder escribir las asignaturas en minuscula
 
