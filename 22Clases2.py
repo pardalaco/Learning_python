@@ -8,21 +8,41 @@ class Coche():
 		self.__enMarcha=False
 
 	def arrancar(self,arrancamos):#Un metodo es una funcion especial que pertenece a la clase // self hace referencia a la instancia de la clase//Tambien le hemos anadido el parametro arrancar
-		self.enMarcha=arrancamos
+		self.__enMarcha=arrancamos
 
-		if(self.enMarcha):
+		if (self.__enMarcha):
+			chequeo=self.chequeo_interno()
+
+
+		if(self.__enMarcha and chequeo):
 			return("El coche esta en marcha")
+
+		elif(self.__enMarcha and chequeo==False)
+			return "Algo ha ido mal en el chequeo. El cohe no puede arrancar"
 
 
 		else:
 			return("El coche esta parado")
 
 
-		self.enMarcha=True # Hemos echo que se ponga en marcha, hemos canviado una propiedad que venia por defecto
+		self.__enMarcha=True # Hemos echo que se ponga en marcha, hemos canviado una propiedad que venia por defecto
 
 	def estado(self):
 		print("El coche tiene ", self.__ruedas," ruedas. Un ancho de: ", self.__anchoChasis, ". Y un largo de:",
 			self.__largoChasis)
+
+	def chequeo_interno(self):#Lo que hace esta funcion es comprobar que todo este correcto antes de arrancar el coche
+		print("Realizando chequeo interno")
+
+		self.gasolina="ok"
+		self.aceite="ok"
+		self.puertas="cerradas"
+
+		if (self.gasolina=="ok" and self.aceite=="ok" and self.puertas=="cerradas"):
+			return True
+
+		else:
+			return False
 
 
 miCoche=Coche() # Hemos echo instanciacion de una clase
