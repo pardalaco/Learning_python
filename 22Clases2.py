@@ -11,13 +11,13 @@ class Coche():
 		self.__enMarcha=arrancamos
 
 		if (self.__enMarcha):
-			chequeo=self.chequeo_interno()
+			chequeo=self.__chequeo_interno()
 
 
 		if(self.__enMarcha and chequeo):
 			return("El coche esta en marcha")
 
-		elif(self.__enMarcha and chequeo==False)
+		elif(self.__enMarcha and chequeo==False):
 			return "Algo ha ido mal en el chequeo. El cohe no puede arrancar"
 
 
@@ -31,7 +31,7 @@ class Coche():
 		print("El coche tiene ", self.__ruedas," ruedas. Un ancho de: ", self.__anchoChasis, ". Y un largo de:",
 			self.__largoChasis)
 
-	def chequeo_interno(self):#Lo que hace esta funcion es comprobar que todo este correcto antes de arrancar el coche
+	def __chequeo_interno(self):#Lo que hace esta funcion es comprobar que todo este correcto antes de arrancar el coche y las dos __ sirven para encapsular la funcion y que no se pueda acceder desde fuera
 		print("Realizando chequeo interno")
 
 		self.gasolina="ok"
@@ -53,6 +53,7 @@ print(miCoche.arrancar(True))#El self se almacena en miCoche y cambia la propied
 
 print(miCoche.estado())#Nos muestra el estado del coche
 
+
 print("-------A continuacion creamos el siguiente objeto----------")
 
 miCoche2=Coche()
@@ -61,6 +62,6 @@ miCoche2=Coche()
 #print("El coche tiene: ",miCoche2.__ruedas," ruedas")
 print(miCoche2.arrancar(False))#El true o false se almacena en arrancamos, por eso arranca o no
 
-miCoche2.ruedas=2 # Estamos intentando modificar la propiedad
+#miCoche2.ruedas=2 # Estamos intentando modificar la propiedad
 
 print(miCoche2.estado())
