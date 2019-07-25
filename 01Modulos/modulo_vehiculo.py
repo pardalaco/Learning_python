@@ -57,29 +57,3 @@ class VElectricos(Vehiculos):
 	def cargarEnergia(self):
 		self.cargando=True
 		
-
-
-"""class cuad(Moto):#Si crearamos esta clase estaria eredado de moto y tendria todos los valores de veiculos y los valores de la moto
-	pass"""
-
-miMoto=Moto("Honda", "CBR")#Le indicamos la marca y el modlo (Linia 3)
-
-miMoto.caballito()#Si no activamos la funcion caballito, el self.hcaballito no tene valor y no se muestra nada
-
-miMoto.estado()
-
-miFurgoneta=furgoneta("Renaut", "3000")
-
-miFurgoneta.arrancar()
-
-miFurgoneta.estado()
-
-print(miFurgoneta.carga(True))#Si no la metemos en un print no hay manera de verlo porque no podemos ver el return
-
-#miMoto.carga(True)#Esto nos da error porque la cariable carga pertenece a la clase furgoneta no a la de moto
-
-class BicicletaElectrica(VElectricos, Vehiculos):#Aqui tenemos una erencia multiple, Cuando hay erencia multiple se da preferencia a la primera clase que indiques (en este caso VElectricos) y solo se utilizara el metodo init que pertenece a la primera
-	pass
-
-miBici=BicicletaElectrica("Orbea", "Hks")
-
