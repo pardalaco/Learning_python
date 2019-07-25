@@ -10,7 +10,7 @@ def multiplicar (op1, op2):
 
 	print ("El resultado de la multiplicacion es: ", op1*op2)
 
-def divicion (op1, op2):
+def division (op1, op2):
 
 	print ("El resultado de la division es: ", op1/op2)
 
