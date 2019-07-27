@@ -3,7 +3,7 @@
 En començar un arxiu, per tal de indicar la versió de Python a utilitzar i la codificació cal indicar-ho així:
 
 ```python
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 ```
 
