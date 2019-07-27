@@ -1,4 +1,7 @@
-miLista=["Maria", 2, True, 112.2, "Antonio"]
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+miLista=["María", 2, True, 112.2, "Antonio"]
 #Crea una lista
 #La lista se numera: 0,1,2,..
 
@@ -16,7 +19,7 @@ print(miLista[:])
 #Agrega un nombre al final de la lista
 
 
-print(miLista.index("Maria"))
+print(miLista.index("María"))
 #Busca la primara posicion del nombre
 
 print("Pepe" in miLista)
@@ -32,11 +35,11 @@ print(miLista[:])
 #Quita el ultimo nombre de la lista
 
 
-miLista2=["Sandra", "Lucia"]
+miLista2=["Sandra", "Lucía"]
 miLista3=miLista+miLista2
 print(miLista3[:])
 #Junta dos listas
 
-miLista=["Maria", 2, True, 112.2, "Antonio"]*3
+miLista=["María", 2, True, 112.2, "Antonio"]*3
 print(miLista[:])
 #Escribe la lista por el numero indicado (en este caso 3), [la multiplica]
