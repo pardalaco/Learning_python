@@ -47,9 +47,10 @@ class listaPersonas(object):
 		listaDePersonas.close()
 
 	def mostrarInfoFicheroExterno(self):
-		print("La informacion del fichero externo es la siguiente:")
+		print("La informacion del fichero externo es la siguiente: ")
 		for p in self.personas:
-				print(p)
+			print(p)
+
 
 miLista=listaPersonas()
 
