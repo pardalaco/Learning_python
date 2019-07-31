@@ -1,3 +1,6 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
 from tkinter import *
 
 raiz=Tk()
@@ -6,9 +9,11 @@ miFrame=Frame(raiz)
 
 miFrame.pack()
 
+operacion=""
+
+resultado=0
+
 #---------------Pantalla-------------------
-
-
 
 numeroPantalla=StringVar()
 
@@ -21,13 +26,47 @@ pantalla.config(background="black", fg="#64B5F6", justify="right")
 
 def numeroPulsado(num):
 
+	global operacion
 
-#	numeroPantalla.set("4")#En estos momentos la funcion solo escribe un 4 y si pulsamos otra vez es como si el numero se estubiera reescriviendo
-	numeroPantalla.set(numeroPantalla.get()+num)#Con la funcion get lo que hacemos es decir que lea todo lo que hay en pantalla y que añada el 4
+	if operacion!="": # Aqui estamos preguntando si la variable operacion es diferente a ""
+
+		numeroPantalla.set(num) # Le estamos diciendo que en el caso de que el usuario haya pulsado el boton suma no concatene con el siguiente número
+
+		operacion="" # Estamos volviendo a poner que operación valga "" como al principio
+
+	else:
+
+#		numeroPantalla.set("4") # En estos momentos la función solo escribe un 4 y si pulsamos otra vez es como si el numero se estubiera reescribiendo
+
+		numeroPantalla.set(numeroPantalla.get() + num) # Con la función `get` lo que hacemos es decir que lea todo lo que hay en pantalla y que añada el 4
+
+#--------------Función suma------------------
+
+def suma(num): # Cuando apriean el boton de sumar se hace una llamada a la variable operacion y almacena dentro de la variable global operacion la palabra suma
+
+	global operacion
+
+	global resultado
+
+	resultado+=int(num) # Incrementa a la variable resultado el valor numérico entero que pudiera haber en pantalla
+
+	operacion="suma"
+
+	numeroPantalla.set(resultado)
+
+#---------------Funcion el_resultado--------
+
+def el_resultado():
+
+	global resultado
+
+	numeroPantalla.set(resultado+int(numeroPantalla.get()))
+
+	resultado=0
 
 #---------------Fila 1----------------------
 
-boton7=Button(miFrame, text="7", width=3, command=lambda:numeroPulsado("7"))
+boton7=Button(miFrame, text="7", width=3, command=lambda:numeroPulsado("7"))# Comand sirve para ejecutar una funcion externa
 boton7.grid(row=2, column=1)
 boton8=Button(miFrame, text="8", width=3, command=lambda:numeroPulsado("8"))
 boton8.grid(row=2, column=2)
@@ -62,11 +101,11 @@ botonRes.grid(row=4, column=4)
 
 boton0=Button(miFrame, text="0", width=3, command=lambda:numeroPulsado("0"))
 boton0.grid(row=5, column=1)
-botonIgual=Button(miFrame, text="=", width=3, command=lambda:numeroPulsado("="))
+botonIgual=Button(miFrame, text="=", width=3, command=lambda:el_resultado())
 botonIgual.grid(row=5, column=2)
 botonComa=Button(miFrame, text=",", width=3, command=lambda:numeroPulsado(","))
 botonComa.grid(row=5, column=3)
-botonSum=Button(miFrame, text="+", width=3, command=lambda:numeroPulsado("+"))
+botonSum=Button(miFrame, text="+", width=3, command=lambda:suma(numeroPantalla.get()))
 botonSum.grid(row=5, column=4)
 
 
