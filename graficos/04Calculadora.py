@@ -48,9 +48,51 @@ def suma(num): # Cuando apriean el boton de sumar se hace una llamada a la varia
 
 	global resultado
 
-	resultado+=int(num) # Incrementa a la variable resultado el valor numérico entero que pudiera haber en pantalla
+	resultado+=float(num) # Incrementa a la variable resultado el valor numérico entero que pudiera haber en pantalla
 
 	operacion="suma"
+
+	numeroPantalla.set(resultado)
+
+#--------------Función resta------------------
+
+def resta(num): # Cuando apriean el boton de sumar se hace una llamada a la variable operacion y almacena dentro de la variable global operacion la palabra resta
+
+	global operacion
+
+	global resultado
+
+	resultado-=float(num) # Incrementa a la variable resultado el valor numérico entero que pudiera haber en pantalla
+
+	operacion="resta"
+
+	numeroPantalla.set(resultado)
+
+#--------------Función multiplicación------------------
+
+def multi(num): # Cuando apriean el boton de sumar se hace una llamada a la variable operacion y almacena dentro de la variable global operacion la palabra multi
+
+	global operacion
+
+	global resultado
+
+	resultado*(float(num)) # Incrementa a la variable resultado el valor numérico entero que pudiera haber en pantalla
+
+	operacion="multi"
+
+	numeroPantalla.set(resultado)
+
+#--------------Función división------------------
+
+def divi(num): # Cuando apriean el boton de sumar se hace una llamada a la variable operacion y almacena dentro de la variable global operacion la palabra divi
+
+	global operacion
+
+	global resultado
+
+	resultado/=float(num) # Incrementa a la variable resultado el valor numérico entero que pudiera haber en pantalla
+
+	operacion="multi"
 
 	numeroPantalla.set(resultado)
 
@@ -60,7 +102,7 @@ def el_resultado():
 
 	global resultado
 
-	numeroPantalla.set(resultado+int(numeroPantalla.get()))
+	numeroPantalla.set(resultado+float(numeroPantalla.get()))
 
 	resultado=0
 
@@ -83,10 +125,11 @@ boton5=Button(miFrame, text="5", width=3, command=lambda:numeroPulsado("5"))
 boton5.grid(row=3, column=2)
 boton6=Button(miFrame, text="6", width=3, command=lambda:numeroPulsado("6"))
 boton6.grid(row=3, column=3)
-botonMul=Button(miFrame, text="x", width=3, command=lambda:numeroPulsado("x"))
+#botonMul=Button(miFrame, text="x", width=3, command=lambda:numeroPulsado("x"))
+botonMul=Button(miFrame, text="x", width=3, command=lambda:suma(numeroPantalla.get()))
 botonMul.grid(row=3, column=4)
 
-#---------------Fila 1----------------------
+#---------------Fila 3----------------------
 
 boton1=Button(miFrame, text="1", width=3, command=lambda:numeroPulsado("1"))
 boton1.grid(row=4, column=1)
@@ -94,10 +137,11 @@ boton2=Button(miFrame, text="2", width=3, command=lambda:numeroPulsado("2"))
 boton2.grid(row=4, column=2)
 boton3=Button(miFrame, text="3", width=3, command=lambda:numeroPulsado("3"))
 boton3.grid(row=4, column=3)
-botonRes=Button(miFrame, text="-", width=3, command=lambda:numeroPulsado("-"))
+#botonRes=Button(miFrame, text="-", width=3, command=lambda:numeroPulsado("-"))
+botonRes=Button(miFrame, text="-", width=3, command=lambda:resta(numeroPantalla.get()))
 botonRes.grid(row=4, column=4)
 
-#---------------Fila 1----------------------
+#---------------Fila 4----------------------
 
 boton0=Button(miFrame, text="0", width=3, command=lambda:numeroPulsado("0"))
 boton0.grid(row=5, column=1)
